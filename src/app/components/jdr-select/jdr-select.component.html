@@ -1,0 +1,21 @@
+<div>
+  <h2>Créer ton personnage</h2>
+
+  <label for="race">Race :</label>
+  <select [(ngModel)]="raceSelectionnee" name="race">
+    <option [ngValue]="null" disabled selected>-- Choisir une race --</option>
+    <option *ngFor="let race of races" [ngValue]="race">{{ race.name }}</option>
+  </select>
+
+  <p *ngIf="raceSelectionnee">🧝 Description : {{ raceSelectionnee.desc }}</p>
+
+  <br />
+
+  <label for="classe">Classe :</label>
+  <select [(ngModel)]="classeSelectionnee" name="classe">
+    <option [ngValue]="null" disabled selected>-- Choisir une classe --</option>
+    <option *ngFor="let classe of classes" [ngValue]="classe">{{ classe.name }}</option>
+  </select>
+
+  <p *ngIf="classeSelectionnee">🛡️ Dé de vie : {{ classeSelectionnee.hit_dice }}</p>
+</div>
